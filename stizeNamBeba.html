@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<title>Očekujemooo...</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .container img {
+        width: 100%;
+        display: block;
+    }
+
+    .header-text {
+        position: absolute;
+        top: 5%;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 0 12px black;
+    }
+
+    .heart {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 130px;
+        cursor: pointer;
+        transition: 0.3s;
+        user-select: none;
+        text-shadow: 0 0 10px black;
+    }
+
+    .label {
+        position: absolute;
+        left: 50%;
+        top: 57%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        color: #ff6fb3;
+        font-weight: bold;
+        opacity: 0;
+        transition: 0.3s;
+        text-shadow: 0 0 12px black;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+<img src="mi.jpg">
+
+    <div class="header-text">Očekujemooo…</div>
+
+    <div id="heart" class="heart">🖤</div>
+    <div id="label" class="label">devojčicu 💗</div>
+</div>
+
+<script>
+    const heart = document.getElementById("heart");
+    const label = document.getElementById("label");
+
+    let revealed = false;
+
+    heart.addEventListener("click", () => {
+        if (!revealed) {
+            heart.textContent = "💗";
+            label.style.opacity = 1;
+        } else {
+            heart.textContent = "🖤";
+            label.style.opacity = 0;
+        }
+        revealed = !revealed;
+    });
+</script>
+
+</body>
+</html>
